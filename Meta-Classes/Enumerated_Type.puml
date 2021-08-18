@@ -1,0 +1,12 @@
+@startuml
+
+class Enumerated_Type
+{
+  Allows to model a type used to model a
+  non-numerical data which can take a finite
+  number of values such as mode, state, etc.
+  The values an Enumerated_Type can take are
+  modeled using Enumeral.
+}
+
+@enduml

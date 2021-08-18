@@ -1,0 +1,10 @@
+@startuml
+
+class Basic_Type
+{
+  Allows to model a type used to model a 
+  data that any micro-controller could
+  natively handle.
+}
+
+@enduml

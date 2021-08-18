@@ -1,0 +1,19 @@
+@startuml
+
+class Physical_Type
+{
+  Allows to model a type used to model a
+  data that represents a physical parameter
+  such as temperature, speed, etc.
+
+  The conversion formula giving the physical
+  value of a data knowing its software value
+  is as follow :
+  phy = soft * Resolution + Offset
+  --
+  Unit:string
+  Resolution:decimal
+  Offset:decimal
+}
+
+@enduml

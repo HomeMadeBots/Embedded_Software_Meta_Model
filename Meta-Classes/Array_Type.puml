@@ -1,0 +1,12 @@
+@startuml
+
+class Array_Type
+{
+  Allows to model a type used to model a
+  data which is a finite list of data
+  typed by the same existing type.
+  --
+  Multiplicity:unsigned integer
+}
+
+@enduml

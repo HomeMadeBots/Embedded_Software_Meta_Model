@@ -1,0 +1,12 @@
+@startuml
+
+abstract class Data_Type
+{
+  Allows to model a type. A type allows to
+  classify data in order to specify which
+  type of value it has and what type of
+  mathematical, relational or logical
+  operations can be applied to it.
+}
+
+@enduml

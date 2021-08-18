@@ -1,0 +1,12 @@
+@startuml
+
+class Enumeral
+{
+  Allows to model a value that an
+  Enumerated_Type can take.
+  --
+  Name:string
+  Description:string
+}
+
+@enduml
