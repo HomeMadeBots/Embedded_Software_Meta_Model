@@ -1,0 +1,12 @@
+@startuml
+
+abstract class Software_Element
+{
+  Base of almost all meta-classes defined
+  in this meta-model.
+  --
+  Name:string
+  Description:string
+}
+
+@enduml
