@@ -1,0 +1,10 @@
+@startuml
+
+class Package
+{
+  A Package is the atomic reusable item
+  of a software model.
+  It gathers cohesive software elements.
+}
+
+@enduml

@@ -30,3 +30,16 @@ the meta-classes that inherit from it.
 | ELMT_2 | The _Name_ of a **Software_Element** is a string of characters. Allowed characters are a to z, A to Z, 0 to 9 and underscore. It shall start with a letter. | To comply with most of programming language allowed symbols. | Error |
 | ELMT_3 | The _Description_ of a **Software_Element** shall be fulfilled. | To ensure high level of understanding. Allows to easily maintain or reuse the **Software_Elements**. | Warning |
 | ELMT_4 | The aggregates of a given **Software_Element** shall have a different _Name_. | To ensure model transformation (including implementation). Some meta-models do not allow that two elements having the same parent have the same identifier (e.g. : AUTOSAR). | Error |
+
+## Package
+
+### Descriptions
+
+![Package](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Package_Dgm.puml)
+
+### Rules
+
+| ID | Description | Rationale | Criticality |
+| :-: | :-- | :-- | :-: |
+| PROJ_1 | **Packages** aggregated within a project should not be involved in dependency cycles. | Cyclic dependencies lead to hardly maintainable software. | Warning |
+| PKG_1 | A **Package** shall contain at least one **Software_Element**. | An empty package is useless. | Warning |
