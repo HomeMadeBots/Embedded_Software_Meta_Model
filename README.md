@@ -49,3 +49,36 @@ the meta-classes that inherit from it.
 ### Description
 
 ![Data_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Data_Type_Dgm.puml)
+
+## Basic_Type
+
+The meta-model defines the followings **Basic_Types** :
+* boolean
+* uint8
+* uint16
+* uint32
+* uint64
+* sint8
+* sint16
+* sint32
+* sint64
+* float32
+* float64
+* character
+* characters_string
+* uint8_array
+
+## Enumerated_Type
+
+### Description
+
+![Enumerated_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Enumerated_Type_Dgm.puml)
+
+### Rules
+
+| ID | Description | Rationale | Criticality |
+| :-: | :-- | :-- | :-: |
+| ENUM_1 | An **Enumerated_Type** shall aggregate at least one **Enumeral**. | To ensure model implementation, many programming language do not allow an enumerated data type without enumeral. | Error |
+| ENUM_2 | An **Enumerated_Type** should aggregate at least two **Enumerals**. | An enumerated data type which can take only value one is useless. | Warning |
+| ENUM_3 | The _Name_ of an **Enumeral** is a string of characters. Allowed characters are a to z, A to Z, 0 to 9 and underscore. It shall begin with a letter. | To ensure model implementation, to comply with most of programming language allowed symbols. | Error |
+| ENUM_4 | The _Description_ of an **Enumeral** shall be fulfilled. | To ensure high level of understanding. Allows to easily maintain or reuse the **Enumerated_Type**. | Warning |
