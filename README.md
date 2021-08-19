@@ -33,7 +33,7 @@ the meta-classes that inherit from it.
 
 ## Package
 
-### Descriptions
+### Description
 
 ![Package](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Package_Dgm.puml)
 
@@ -43,3 +43,9 @@ the meta-classes that inherit from it.
 | :-: | :-- | :-- | :-: |
 | PROJ_1 | **Packages** aggregated within a project should not be involved in dependency cycles. | Cyclic dependencies lead to hardly maintainable software. | Warning |
 | PKG_1 | A **Package** shall contain at least one **Software_Element**. | An empty package is useless. | Warning |
+
+## Data_Type
+
+### Description
+
+![Data_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Data_Type_Dgm.puml)
