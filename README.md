@@ -92,3 +92,18 @@ handled by a micro-controller.
 | ENUM_2 | An **Enumerated_Type** should aggregate at least two **Enumerals**. | An enumerated data type which can take only value one is useless. | Warning |
 | ENUM_3 | The _Name_ of an **Enumeral** is a string of characters. Allowed characters are a to z, A to Z, 0 to 9 and underscore. It shall begin with a letter. | To ensure model implementation, to comply with most of programming language allowed symbols. | Error |
 | ENUM_4 | The _Description_ of an **Enumeral** shall be fulfilled. | To ensure high level of understanding. Allows to easily maintain or reuse the **Enumerated_Type**. | Warning |
+
+## Physical_Type
+
+### Description
+
+![Physical_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Physical_Type_Dgm.puml)
+
+### Rules
+
+| ID | Description | Rationale | Criticality |
+| :-: | :-- | :-- | :-: |
+| PHY_1 | The _Resolution_ of a **Physical_Type** shall be set to a non-null decimal value. | The _Resolution_ shall be consistent with a physical value. A _Resolution_ equal to 0 would mean that the type allows to model a constant equal to the _Offset_. | Error |
+| PHY_2 | The _Unit_ of a **Physical_Type** shall be set. | To ensure high level of understanding. Allows to easily maintain or reuse the type. | Warning |
+| PHY_3 | The _Base_Type_Ref_ of a **Physical_Type** shall be a **Basic_Integer_Type**. | A physical data type shall rely on a native integer data type from the micro-contoller to be able to apply the conversion rule. | Error |
+| PHY_4 | The _Offset_ of a **Physical_Type** shall be set to a decimal value. | The _Offset_ shall be consistent with a physical value. | Error |
