@@ -52,21 +52,31 @@ the meta-classes that inherit from it.
 
 ## Basic_Type
 
-The meta-model defines the followings **Basic_Types** :
-* boolean
-* uint8
-* uint16
-* uint32
-* uint64
-* sint8
-* sint16
-* sint32
-* sint64
-* float32
-* float64
-* character
-* characters_string
-* uint8_array
+### Description
+
+![Basic_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Basic_Type_Dgm.puml)
+
+The meta-model defines some **Basic_Types**. They are types that can be natively
+handled by a micro-controller.
+* **Basic_Boolean_Type**
+  * **boolean** : boolean.
+* **Basic_Integer_Type**
+  * **uint8** : unsigned integer on 8 bits.
+  * **uint16** : unsigned integer on 16 bits.
+  * **uint32** : unsigned integer on 32 bits.
+  * **uint64** : unsigned integer on 64 bits.
+  * **sint8** : signed integer on 8 bits.
+  * **sint16** : signed integer on 16 bits.
+  * **sint32** : signed integer on 32 bits.
+  * **sint64** : signed integer on 64 bits.
+* **Basic_Floating_Point_Type**
+  * **float32** : decimal encoded on 32 bits.
+  * **float64** : decimal encoded on 64 bits.
+* **Basic_Characters_Type**
+  * **character** : single character.
+  * **characters_string** : string of characters.
+* **Basic_Array_Type**
+  * **uint8_array** : array of uint8 (unknown size).
 
 ## Enumerated_Type
 

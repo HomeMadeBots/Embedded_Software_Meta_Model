@@ -1,0 +1,9 @@
+@startuml
+
+abstract class Basic_Integer_Type
+{
+  Allows to model a type used to model a
+  data that represent an integer value.
+}
+
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+
+abstract class Basic_Floating_Point_Type
+{
+  Allows to model a type used to model a
+  data that represent a decimal data.
+}
+
+@enduml

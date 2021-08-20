@@ -1,0 +1,9 @@
+@startuml
+
+abstract class Basic_Boolean_Type
+{
+  Allows to model a type used to model a
+  data that represent a boolean value.
+}
+
+@enduml

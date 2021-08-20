@@ -1,0 +1,10 @@
+@startuml
+
+abstract class Basic_Array_Type
+{
+  Allows to model a type used to model a
+  data that represent an array whose the
+  size is unknown.
+}
+
+@enduml
