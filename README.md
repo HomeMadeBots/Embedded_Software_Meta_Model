@@ -103,7 +103,22 @@ handled by a micro-controller.
 
 | ID | Description | Rationale | Criticality |
 | :-: | :-- | :-- | :-: |
-| PHY_1 | The _Resolution_ of a **Physical_Type** shall be set to a non-null decimal value. | The _Resolution_ shall be consistent with a physical value. A _Resolution_ equal to 0 would mean that the type allows to model a constant equal to the _Offset_. | Error |
-| PHY_2 | The _Unit_ of a **Physical_Type** shall be set. | To ensure high level of understanding. Allows to easily maintain or reuse the type. | Warning |
+| PHY_1 | The _Resolution_ of a **Physical_Type** shall be set to a non-null decimal value. | The _Resolution_ shall be consistent with a physical value.</br>A _Resolution_ equal to 0 would mean that the type allows to model a constant equal to the _Offset_. | Error |
+| PHY_2 | The _Unit_ of a **Physical_Type** shall be set. | To ensure high level of understanding.</br>Allows to easily maintain or reuse the type. | Warning |
 | PHY_3 | The _Base_Type_Ref_ of a **Physical_Type** shall be a **Basic_Integer_Type**. | A physical data type shall rely on a native integer data type from the micro-contoller to be able to apply the conversion rule. | Error |
 | PHY_4 | The _Offset_ of a **Physical_Type** shall be set to a decimal value. | The _Offset_ shall be consistent with a physical value. | Error |
+
+## Array_Type
+
+### Description
+
+![Array_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Array_Type_Dgm.puml)
+
+### Rules
+
+| ID | Description | Rationale | Criticality |
+| :-: | :-------------- | :---- | :-: |
+| ARR_1 | The _Multiplicity_ of an **Array_Type** shall be a strictly positive integer value. | Nonsense. | Error |
+| ARR_2 | The _Multiplicity_ of an **Array_Type** should be greater than 1. | An array of one element is not really an array.</br>Just a kind of "typedef" to redefine an existing type. | Warning |
+| ARR_3 | The association with a **Data_Type** (through _Base_Type_Ref_) is mandatory. | Obvious. | Error |
+| ARR_4 | The _Base_Type_Ref_ of an **Array_Type** shall not be itself. | Nonsense. | Error |
