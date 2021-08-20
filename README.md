@@ -24,12 +24,27 @@ the meta-classes that inherit from it.
 
 ### Rules
 
-| ID | Description | Rationale | Criticality |
-| :-: | :-- | :-- | :-: |
-| ELMT_1 | The _Name_ of any **Software_Element** shall be fulfilled. | _Name_ can be used to create the symbol of the corresponding implementation element. | Error |
-| ELMT_2 | The _Name_ of a **Software_Element** is a string of characters. Allowed characters are a to z, A to Z, 0 to 9 and underscore. It shall start with a letter. | To comply with most of programming language allowed symbols. | Error |
-| ELMT_3 | The _Description_ of a **Software_Element** shall be fulfilled. | To ensure high level of understanding. Allows to easily maintain or reuse the **Software_Elements**. | Warning |
-| ELMT_4 | The aggregates of a given **Software_Element** shall have a different _Name_. | To ensure model transformation (including implementation). Some meta-models do not allow that two elements having the same parent have the same identifier (e.g. : AUTOSAR). | Error |
+#### ELMT_1 (Error)
+The _Name_ of any **Software_Element** shall be fulfilled.  
+_It can be used to create the symbol of the corresponding implementation
+element._
+
+#### ELMT_2 (Error)
+The _Name_ of a **Software_Element** is a string of characters. Allowed
+characters are a to z, A to Z, 0 to 9 and underscore. It shall start with a
+letter.  
+_To comply with most of programming language allowed symbols._
+
+#### ELMT_3 (Warning)
+The _Description_ of a **Software_Element** shall be fulfilled.  
+_To ensure high level of understanding. Allows to easily maintain or reuse the
+elements._
+
+#### ELMT_4 (Error)
+The aggregates of a given **Software_Element** shall have a different _Name_.  
+_To ensure model transformation (including implementation).
+Some meta-models do not allow that two elements having the same parent have the
+same identifier (e.g. : AUTOSAR)._ |  |
 
 ## Package
 
@@ -39,10 +54,14 @@ the meta-classes that inherit from it.
 
 ### Rules
 
-| ID | Description | Rationale | Criticality |
-| :-: | :-- | :-- | :-: |
-| PROJ_1 | **Packages** aggregated within a project should not be involved in dependency cycles. | Cyclic dependencies lead to hardly maintainable software. | Warning |
-| PKG_1 | A **Package** shall contain at least one **Software_Element**. | An empty package is useless. | Warning |
+#### PROJ_1 (Warning)
+**Packages** aggregated within a project should not be involved in dependency
+cycles.  
+_Cyclic dependencies lead to hardly maintainable software._
+
+#### PKG_1 (Warning)
+A **Package** shall contain at least one **Software_Element**.  
+_An empty package is useless._
 
 ## Data_Type
 
@@ -86,12 +105,25 @@ handled by a micro-controller.
 
 ### Rules
 
-| ID | Description | Rationale | Criticality |
-| :-: | :-- | :-- | :-: |
-| ENUM_1 | An **Enumerated_Type** shall aggregate at least one **Enumeral**. | To ensure model implementation, many programming language do not allow an enumerated data type without enumeral. | Error |
-| ENUM_2 | An **Enumerated_Type** should aggregate at least two **Enumerals**. | An enumerated data type which can take only value one is useless. | Warning |
-| ENUM_3 | The _Name_ of an **Enumeral** is a string of characters. Allowed characters are a to z, A to Z, 0 to 9 and underscore. It shall begin with a letter. | To ensure model implementation, to comply with most of programming language allowed symbols. | Error |
-| ENUM_4 | The _Description_ of an **Enumeral** shall be fulfilled. | To ensure high level of understanding. Allows to easily maintain or reuse the **Enumerated_Type**. | Warning |
+#### ENUM_1 (Error)
+An **Enumerated_Type** shall aggregate at least one **Enumeral**.  
+_To ensure model implementation, many programming language do not allow an
+enumerated data type without enumeral._
+
+#### ENUM_2 (Warning)
+An **Enumerated_Type** should aggregate at least two **Enumerals**.  
+_An enumerated data type which can take only value one is useless._
+
+#### ENUM_3 (Error)
+The _Name_ of an **Enumeral** is a string of characters. Allowed characters are
+a to z, A to Z, 0 to 9 and underscore. It shall begin with a letter.   
+_To ensure model implementation, to comply with most of programming language
+allowed symbols._
+
+#### ENUM_4 (Warning)
+The _Description_ of an **Enumeral** shall be fulfilled.  
+_To ensure high level of understanding. Allows to easily maintain or reuse the
+type._
 
 ## Physical_Type
 
@@ -101,12 +133,27 @@ handled by a micro-controller.
 
 ### Rules
 
-| ID | Description | Rationale | Criticality |
-| :-: | :-- | :-- | :-: |
-| PHY_1 | The _Resolution_ of a **Physical_Type** shall be set to a non-null decimal value. | The _Resolution_ shall be consistent with a physical value.</br>A _Resolution_ equal to 0 would mean that the type allows to model a constant equal to the _Offset_. | Error |
-| PHY_2 | The _Unit_ of a **Physical_Type** shall be set. | To ensure high level of understanding.</br>Allows to easily maintain or reuse the type. | Warning |
-| PHY_3 | The _Base_Type_Ref_ of a **Physical_Type** shall be a **Basic_Integer_Type**. | A physical data type shall rely on a native integer data type from the micro-contoller to be able to apply the conversion rule. | Error |
-| PHY_4 | The _Offset_ of a **Physical_Type** shall be set to a decimal value. | The _Offset_ shall be consistent with a physical value. | Error |
+#### PHY_1 (Error)
+The _Resolution_ of a **Physical_Type** shall be set to a non-null decimal
+value.  
+_The _Resolution_ shall be consistent with a physical value.  
+A _Resolution_ equal to 0 would mean that the type allows to model a constant
+equal to the _Offset__.
+
+
+#### PHY_2 (Warning)
+The _Unit_ of a **Physical_Type** shall be set.  
+_To ensure high level of understanding. Allows to easily maintain or reuse the
+type._
+
+#### PHY_3 (Error)
+The _Base_Type_Ref_ of a **Physical_Type** shall be a **Basic_Integer_Type**.  
+_A physical data type shall rely on a native integer data type from the
+micro-contoller to be able to apply the conversion rule._
+
+#### PHY_4 (Error)
+The _Offset_ of a **Physical_Type** shall be set to a decimal value.  
+_The _Offset_ shall be consistent with a physical value._
 
 ## Array_Type
 
@@ -116,12 +163,24 @@ handled by a micro-controller.
 
 ### Rules
 
-| ID | Description | Rationale | Criticality |
-| :-: | :-- | :-- | :-: |
-| ARR_1 | The _Multiplicity_ of an **Array_Type** shall be a strictly positive integer value. | Nonsense. | Error |
-| ARR_2 | The _Multiplicity_ of an **Array_Type** should be greater than 1. | An array of one element is not really an array.</br>Just a kind of "typedef" to redefine an existing type. | Warning |
-| ARR_3 | The association with a **Data_Type** (through _Base_Type_Ref_) is mandatory. | Obvious. | Error |
-| ARR_4 | The _Base_Type_Ref_ of an **Array_Type** shall not be itself. | Nonsense. | Error |
+#### ARR_1 (Error)
+The _Multiplicity_ of an **Array_Type** shall be a strictly positive integer
+value.  
+_Nonsense._
+
+#### ARR_2 (Warning)
+The _Multiplicity_ of an **Array_Type** should be greater than 1.  
+_An array of one element is not really an array, just a kind of "typedef" to
+redefine an existing type._
+
+#### ARR_3 (Error)
+The association with a **Data_Type** (through _Base_Type_Ref_) is mandatory.  
+_Obvious._
+
+
+#### ARR_4 (Error)
+The _Base_Type_Ref_ of an **Array_Type** shall not be itself.  
+_Nonsense._
 
 ## Record_Type
 
@@ -131,9 +190,16 @@ handled by a micro-controller.
 
 ### Rules
 
-| ID | Description | Rationale | Criticality |
-| :-: | :-- | :-- | :-: |
-| REC_1 | A **Record_Type** shall aggregate at least one **Field**. | To ensure model implementation, many programming language do not allow a structured data type without field. | Error |
-| REC_2 | A **Record_Type** should aggregate at least two **Fields**. | A structure with only one field is useless. | Warning |
-| REC_3 | A **Field** shall not reference its owner. | To ensure model implementation, some programming language do not allow auto-reference. | Error |
+#### REC_1 (Error)
+A **Record_Type** shall aggregate at least one **Field**.  
+_To ensure model implementation, many programming language do not allow a
+structured data type without field._
 
+#### REC_2 (Warning)
+A **Record_Type** should aggregate at least two **Fields**.  
+_A structure with only one field is useless._
+
+#### REC_3 (Error)
+A **Field** shall not reference its owner.  
+_To ensure model implementation, some programming language do not allow
+auto-reference._
