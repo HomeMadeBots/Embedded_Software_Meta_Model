@@ -1,5 +1,8 @@
 @startuml
 
 class Field
+{
+  Allow to model a field of a Record_Type.
+}
 
 @enduml

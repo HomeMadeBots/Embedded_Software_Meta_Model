@@ -117,8 +117,23 @@ handled by a micro-controller.
 ### Rules
 
 | ID | Description | Rationale | Criticality |
-| :-: | :-------------- | :---- | :-: |
+| :-: | :-- | :-- | :-: |
 | ARR_1 | The _Multiplicity_ of an **Array_Type** shall be a strictly positive integer value. | Nonsense. | Error |
 | ARR_2 | The _Multiplicity_ of an **Array_Type** should be greater than 1. | An array of one element is not really an array.</br>Just a kind of "typedef" to redefine an existing type. | Warning |
 | ARR_3 | The association with a **Data_Type** (through _Base_Type_Ref_) is mandatory. | Obvious. | Error |
 | ARR_4 | The _Base_Type_Ref_ of an **Array_Type** shall not be itself. | Nonsense. | Error |
+
+## Record_Type
+
+### Description
+
+![Record_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Record_Type_Dgm.puml)
+
+### Rules
+
+| ID | Description | Rationale | Criticality |
+| :-: | :-- | :-- | :-: |
+| REC_1 | A **Record_Type** shall aggregate at least one **Field**. | To ensure model implementation, many programming language do not allow a structured data type without field. | Error |
+| REC_2 | A **Record_Type** should aggregate at least two **Fields**. | A structure with only one field is useless. | Warning |
+| REC_3 | A **Field** shall not reference its owner. | To ensure model implementation, some programming language do not allow auto-reference. | Error |
+
