@@ -5,6 +5,17 @@ The meta-model is framework and language independent.
 It is a set of meta-classes, relations and rules dedicated to the modeling of an
 embedded software.
 
+## Meta-classes list
+
+* [Software_Element](#software_element)
+* [Package](#package)
+* [Data_Type](#data_type)
+* [Basic_Type](#basic_type)
+* [Enumerated_Type](#enumerated_type)
+* [Physical_Type](#physical_type)
+* [Array_Type](#array_type)
+* [Record_Type](#record_type)
+
 ## Software_Element
 
 Many meta-classes of this meta-model derive from Software_Element.  
@@ -44,7 +55,7 @@ elements._
 The aggregates of a given **Software_Element** shall have a different _Name_.  
 _To ensure model transformation (including implementation).
 Some meta-models do not allow that two elements having the same parent have the
-same identifier (e.g. : AUTOSAR)._ |  |
+same identifier (e.g. : AUTOSAR)._
 
 ## Package
 
