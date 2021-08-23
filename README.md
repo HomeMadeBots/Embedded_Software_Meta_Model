@@ -6,12 +6,13 @@ It is a set of meta-classes, relations and rules dedicated to the modeling of an
 embedded software.
 
 It covers the the physical software architecture and the software detailed
-design.
+design. Functionnal architecture is not covered.
 
 ## Meta-classes list
 
 * [Software_Element](#software_element)
 * [Package](#package)
+* [Component_Type](#component_type)
 * [Data_Type](#data_type)
 * [Basic_Type](#basic_type)
 * [Enumerated_Type](#enumerated_type)
@@ -21,11 +22,13 @@ design.
 
 ## Software_Element
 
+### Description
+
 Many meta-classes of this meta-model derive from Software_Element.  
 It is an abstract meta-class that defines the common attributes shared by all
 the meta-classes that inherit from it.
 
-### Description
+### Definition
 
 ![Software_Element](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Software_Element_Dgm.puml)
 
@@ -62,7 +65,7 @@ same identifier (e.g. : AUTOSAR)._
 
 ## Package
 
-### Description
+### Definition
 
 ![Package](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Package_Dgm.puml)
 
@@ -77,15 +80,53 @@ _Cyclic dependencies lead to hardly maintainable software._
 A **Package** shall contain at least one **Software_Element**.  
 _An empty package is useless._
 
-## Data_Type
+## Component_Type
 
 ### Description
+
+A software component is a part of a software which implements one or several
+software functions.
+
+The software architect shall decompose the embedded software in several software
+components and allocate each software function to one and only one software
+component.
+
+To fit object oriented design concept, a software component shall be seen as the
+abstraction of two linked element : the software component prototype
+(the object) and the software component type (the class).  
+Thereby, if the same software functions are needed several times within the same
+software project, it is possible to instantiate the same component type several
+times.
+
+### Definition
+
+![Component_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Component_Type_Dgm.puml)
+
+### Remarks
+
+A software component shall be as consistent as possible, i.e. the implemented
+functions shall rely on the same topic.
+
+We distinguish 3 kinds of software component types :  
+1. The multi-instanciable software components. These components can be re-used
+on several projects and a single project can use several instances of the same
+component (e.g. : push button sensor).
+2. The configurable singleton software components. These components can be
+re-used on several projects, but each project has only one instance of them
+(e.g. : cryptographic server).
+3. The project specific singleton software components. These components are
+designed especially for a given project (cannot be reused) and it has only one
+instance of them (e.g. : system specific function manager).
+
+## Data_Type
+
+### Definition
 
 ![Data_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Data_Type_Dgm.puml)
 
 ## Basic_Type
 
-### Description
+### Definition
 
 ![Basic_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Basic_Type_Dgm.puml)
 
@@ -113,7 +154,7 @@ handled by a micro-controller.
 
 ## Enumerated_Type
 
-### Description
+### Definition
 
 ![Enumerated_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Enumerated_Type_Dgm.puml)
 
@@ -141,7 +182,7 @@ type._
 
 ## Physical_Type
 
-### Description
+### Definition
 
 ![Physical_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Physical_Type_Dgm.puml)
 
@@ -171,7 +212,7 @@ _The _Offset_ shall be consistent with a physical value._
 
 ## Array_Type
 
-### Description
+### Definition
 
 ![Array_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Array_Type_Dgm.puml)
 
@@ -191,14 +232,13 @@ redefine an existing type._
 The association with a **Data_Type** (through _Base_Type_Ref_) is mandatory.  
 _Obvious._
 
-
 #### ARR_4 (Error)
 The _Base_Type_Ref_ of an **Array_Type** shall not be itself.  
 _Nonsense._
 
 ## Record_Type
 
-### Description
+### Definition
 
 ![Record_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Record_Type_Dgm.puml)
 
