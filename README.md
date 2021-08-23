@@ -5,6 +5,9 @@ The meta-model is framework and language independent.
 It is a set of meta-classes, relations and rules dedicated to the modeling of an
 embedded software.
 
+It covers the the physical software architecture and the software detailed
+design.
+
 ## Software_Element
 
 Many meta-classes of this meta-model derive from Software_Element.  
