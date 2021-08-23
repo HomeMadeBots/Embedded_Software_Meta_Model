@@ -13,6 +13,7 @@ design. Functionnal architecture is not covered.
 * [Software_Element](#software_element)
 * [Package](#package)
 * [Component_Type](#component_type)
+* [Interface](#interface)
 * [Data_Type](#data_type)
 * [Basic_Type](#basic_type)
 * [Enumerated_Type](#enumerated_type)
@@ -117,6 +118,24 @@ re-used on several projects, but each project has only one instance of them
 3. The project specific singleton software components. These components are
 designed especially for a given project (cannot be reused) and it has only one
 instance of them (e.g. : system specific function manager).
+
+## Interface
+
+### Description
+
+To realize its role (its software functions) a software component may need to
+use functions from the other software components of the embedded software.  
+The communication between the software components shall be done following
+pre-define pattern. These pattern are the software interfaces.  
+An interface is a formal description of the communication pattern between
+software components types. An interface defines a contract.
+
+The software architect shall define which interface shall be realized and are
+needed by each software component to ensure its role.
+
+### Definition
+
+![Interface](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Interface_Dgm.puml)
 
 ## Data_Type
 
