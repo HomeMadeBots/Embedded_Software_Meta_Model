@@ -1,6 +1,6 @@
 @startuml
 
-abstract class Basic_Boolean_Type
+class Basic_Boolean_Type
 {
   Used to model a type used to model a
   data that represent a boolean value.

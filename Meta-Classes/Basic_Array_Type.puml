@@ -1,6 +1,6 @@
 @startuml
 
-abstract class Basic_Array_Type
+class Basic_Array_Type
 {
   Used to model a type used to model a
   data that represent an array whose the

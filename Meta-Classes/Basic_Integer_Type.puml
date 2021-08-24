@@ -1,6 +1,6 @@
 @startuml
 
-abstract class Basic_Integer_Type
+class Basic_Integer_Type
 {
   Used to model a type used to model a
   data that represent an integer value.

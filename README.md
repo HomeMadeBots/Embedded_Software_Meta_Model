@@ -160,6 +160,12 @@ needed by each software component to ensure its role.
 
 ![Data_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Data_Type_Dgm.puml)
 
+The abstract meta-class **Data_Type** is specialized into several sub
+meta-classes.
+
+![Data_Type specializations](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Data_Type_Specializations_Dgm.puml)
+
+
 ## Basic_Type
 
 ### Definition

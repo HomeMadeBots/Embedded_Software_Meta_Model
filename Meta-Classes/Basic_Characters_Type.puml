@@ -1,6 +1,6 @@
 @startuml
 
-abstract class Basic_Characters_Type
+class Basic_Characters_Type
 {
   Used to model a type used to model a
   data that represent a set og characters.
