@@ -1,7 +1,5 @@
 @startuml
 
-skinparam groupInheritance 3
-
 !includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
 
 !includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Data_Type.puml
@@ -16,11 +14,10 @@ skinparam groupInheritance 3
 
 Data_Type <|-- Basic_Type
 
-Basic_Type <|-- Basic_Boolean_Type
-Basic_Type <|-- Basic_Integer_Type
+Basic_Type <|-right- Basic_Boolean_Type
+Basic_Type <|-left- Basic_Integer_Type
 Basic_Type <|-- Basic_Floating_Point_Type
 Basic_Type <|-- Basic_Characters_Type
 Basic_Type <|-- Basic_Array_Type
-
 
 @enduml

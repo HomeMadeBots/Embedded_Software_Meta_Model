@@ -94,9 +94,9 @@ _An empty package is useless._
 
 ### Remarks
 
-A package is the atomic reusable item of a software model.
+* A package is the atomic reusable item of a software model.
 
-It should gather cohesive software elements.
+* It should gather cohesive software elements.
 
 ## Component_Type
 
@@ -122,17 +122,17 @@ times.
 
 ### Remarks
 
-A software component shall be as consistent as possible, i.e. the implemented
+* A software component shall be as consistent as possible, i.e. the implemented
 functions shall rely on the same topic.
 
-We distinguish 3 kinds of software component types :  
-1. The multi-instanciable software components. These components can be re-used
+* We distinguish 3 kinds of software component types :  
+  1. The multi-instanciable software components. These components can be re-used
 on several projects and a single project can use several instances of the same
 component (e.g. : push button sensor).
-2. The configurable singleton software components. These components can be
+  2. The configurable singleton software components. These components can be
 re-used on several projects, but each project has only one instance of them
 (e.g. : cryptographic server).
-3. The project specific singleton software components. These components are
+  3. The project specific singleton software components. These components are
 designed especially for a given project (cannot be reused) and it has only one
 instance of them (e.g. : system specific function manager).
 
@@ -165,15 +165,18 @@ meta-classes.
 
 ![Data_Type specializations](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Data_Type_Specializations_Dgm.puml)
 
-
 ## Basic_Type
+
+### Description
+
+An embedded software is by definition implemented on a micro-controller.  
+A basic type is a type that can be natively handled by a micro-controller.
 
 ### Definition
 
 ![Basic_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Basic_Type_Dgm.puml)
 
-The meta-model defines some **Basic_Types**. They are types that can be natively
-handled by a micro-controller.
+The meta-model defines some **Basic_Types** that can be used to model data :
 * **Basic_Boolean_Type**
   * **boolean** : boolean.
 * **Basic_Integer_Type**
