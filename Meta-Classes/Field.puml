@@ -2,7 +2,7 @@
 
 class Field
 {
-  Allow to model a field of a Record_Type.
+  Used to model a field of a Record_Type.
 }
 
 @enduml

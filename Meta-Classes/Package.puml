@@ -2,9 +2,8 @@
 
 class Package
 {
-  A Package is the atomic reusable item
-  of a software model.
-  It gathers cohesive software elements.
+  Used to model a container grouping
+  software elements.
 }
 
 @enduml

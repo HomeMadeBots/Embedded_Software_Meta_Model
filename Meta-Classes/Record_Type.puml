@@ -2,7 +2,7 @@
 
 class Record_Type
 {
-  Allows to model a type used to model a
+  Used to model a type used to model a
   data which is a set of data typed by
   others existing types.
   Each member of the set is model using

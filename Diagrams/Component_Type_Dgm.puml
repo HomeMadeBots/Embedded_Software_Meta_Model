@@ -8,7 +8,7 @@
 
 !includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Component_Type.puml
 
-Package "1" o--> "*\rSWCTs" Component_Type
+Package "1" o--> "*" Component_Type
 
 Software_Element <|-right- Component_Type
 

@@ -9,6 +9,6 @@
 
 Data_Type <|-- Enumerated_Type
 
-Enumerated_Type "1" *--> "2..*\rEnumerals" Enumeral
+Enumerated_Type "1" *--> "2..*" Enumeral
 
 @enduml

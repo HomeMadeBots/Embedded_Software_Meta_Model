@@ -2,7 +2,7 @@
 
 class Enumeral
 {
-  Allows to model a value that an
+  Used to model a value that an
   Enumerated_Type can take.
   --
   Name:string

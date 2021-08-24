@@ -2,7 +2,7 @@
 
 class Physical_Type
 {
-  Allows to model a type used to model a
+  Used to model a type used to model a
   data that represents a physical parameter
   such as temperature, speed, etc.
 

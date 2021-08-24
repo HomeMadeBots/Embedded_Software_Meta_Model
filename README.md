@@ -66,9 +66,20 @@ same identifier (e.g. : AUTOSAR)._
 
 ## Package
 
+### Description
+
+An embedded software is the aggregation of many software elements.  
+To enable the reuse of these software elements it is suitable to group them in a
+consistent set.
+
+A package allows to group software elements.
+
 ### Definition
 
 ![Package](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Package_Dgm.puml)
+
+All the element kind which can be aggregated by a **Package** are not modeled on
+this diagram.
 
 ### Rules
 
@@ -80,6 +91,12 @@ _Cyclic dependencies lead to hardly maintainable software._
 #### PKG_1 (Warning)
 A **Package** shall contain at least one **Software_Element**.  
 _An empty package is useless._
+
+### Remarks
+
+A package is the atomic reusable item of a software model.
+
+It should gather cohesive software elements.
 
 ## Component_Type
 
