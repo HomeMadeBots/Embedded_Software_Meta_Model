@@ -15,6 +15,7 @@ design. Functionnal architecture is not covered.
 * [Component_Type](#component_type)
 * [Interface](#interface)
 * [Ports](#ports)
+* [OS_Operation](#os_operation)
 * [Data_Type](#data_type)
 * [Basic_Type](#basic_type)
 * [Enumerated_Type](#enumerated_type)
@@ -180,6 +181,21 @@ A **Port** shall have one and only one contract (through _Contract\_Ref_).
 a component can only depend on a subset of operations provided by an other one
 and not on all the realized interfaces.
 * It also allows to realize, or depend on, the same interface several times.
+
+## OS_Operation
+
+### Description
+
+The software component types can provide public operations that can be called by
+the operating system of the micro-controller.
+
+### Definition
+
+![OS_Operation](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/OS_Operation_Dgm.puml)
+
+### Remarks
+
+* An **OS_OPeration** does not have any argument.
 
 ## Data_Type
 

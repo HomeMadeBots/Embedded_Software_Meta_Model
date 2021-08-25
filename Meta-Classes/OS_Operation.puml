@@ -1,0 +1,10 @@
+@startuml
+
+class OS_Operation
+{
+  Used to model a public operation
+  of a **Component_Type** that shall
+  be called by the operating system.
+}
+
+@enduml
