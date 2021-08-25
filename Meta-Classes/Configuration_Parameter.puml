@@ -1,0 +1,12 @@
+@startuml
+
+class Configuration_Parameter
+{
+  Used to model a parameter of
+  a **Component_Type** that
+  is set at its instantiation.
+  --
+  + Default_Value
+}
+
+@enduml

@@ -16,6 +16,7 @@ design. Functionnal architecture is not covered.
 * [Interface](#interface)
 * [Ports](#ports)
 * [OS_Operation](#os_operation)
+* [Configuration_Parameter](#configuration_parameter)
 * [Data_Type](#data_type)
 * [Basic_Type](#basic_type)
 * [Enumerated_Type](#enumerated_type)
@@ -196,6 +197,44 @@ the operating system of the micro-controller.
 ### Remarks
 
 * An **OS_OPeration** does not have any argument.
+
+## Configuration_Parameter
+
+### Description
+
+The software component type can provide public (read-only) attributes that allow
+to configure it.  
+The value of these attributes shall be set at object creation (component type
+instantiation) and cannot be modify later (at run time).
+
+### Definition
+
+![Configuration_Parameter](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Configuration_Parameter_Dgm.puml)
+
+### Rules
+
+#### PARAM_1 (Error)
+
+The **Data_Type** referenced by a **Configuration_Parameter** shall not be a
+**Record_Type**.  
+_Parameter shall be as simple as possible._
+
+#### PARAM_2 (Error)
+
+The **Data_Type** referenced by a **Configuration_Parameter** shall not be an
+**Array_Type** of **Record_Type**.  
+_Parameter shall be as simple as possible._
+
+#### PARAM_3 (Error)
+
+The **Data_Type** referenced by a **Configuration_Parameter** shall not be an
+**Array_Type** of **Array_Type**.  
+_Parameter shall be as simple as possible._
+
+### Remarks
+
+* **Configuration_Parameters** shall be use to create configurable (either
+mutli-instantiable, either singleton) **Component_Types**.
 
 ## Data_Type
 
