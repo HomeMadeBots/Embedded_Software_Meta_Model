@@ -14,6 +14,7 @@ design. Functionnal architecture is not covered.
 * [Package](#package)
 * [Component_Type](#component_type)
 * [Interface](#interface)
+* [Ports](#ports)
 * [Data_Type](#data_type)
 * [Basic_Type](#basic_type)
 * [Enumerated_Type](#enumerated_type)
@@ -153,6 +154,32 @@ needed by each software component to ensure its role.
 ### Definition
 
 ![Interface](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Interface_Dgm.puml)
+
+## Ports
+
+### Description
+
+The software components hide the implementation of the functionality they provide
+and simply expose very well defined connection points, called ports.  
+Through a "provider" port, a software component can realized one interface.  
+Through a "requirer" port, a software component can access to the realized
+interface of an other software component.
+
+### Definition
+
+![Ports](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Port_Dgm.puml)
+
+### Rules
+
+#### PORT_1 (Error)
+A **Port** shall have one and only one contract (through _Contract\_Ref_).
+
+### Remarks
+
+* The port mechanism allows to finely managed dependencies between components :
+a component can only depend on a subset of operations provided by an other one
+and not on all the realized interfaces.
+* It also allows to realize, or depend on, the same interface several times.
 
 ## Data_Type
 

@@ -2,9 +2,10 @@
 
 abstract class Interface
 {
-  Used to model a communication pattern defining
-  which and how the information can be exchanged
-  between Component_Types.  
+  Used to model a communication
+  pattern defining which and how
+  the information can be exchanged
+  between **Component_Types**.  
 }
 
 @enduml

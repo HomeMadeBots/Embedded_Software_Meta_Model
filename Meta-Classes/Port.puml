@@ -1,0 +1,9 @@
+@startuml
+
+abstract class Port
+{
+  Used to model a connection
+  point of a **Component_Type**.
+}
+
+@enduml

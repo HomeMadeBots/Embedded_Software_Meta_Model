@@ -1,0 +1,10 @@
+@startuml
+
+class Provider_Port
+{
+  Used to model a connection point of a
+  **Component_Type** through which it
+  realizes a specified **Interface**.
+}
+
+@enduml

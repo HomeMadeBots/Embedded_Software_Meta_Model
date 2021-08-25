@@ -1,0 +1,11 @@
+@startuml
+
+class Requirer_Port
+{
+  Used to model a connection point of a
+  **Component_Type** through which it
+  accesses the elements defined by a
+  specified **Interface**.
+}
+
+@enduml

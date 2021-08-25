@@ -1,0 +1,24 @@
+@startuml
+
+!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Software_Element.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Component_Type.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Interface.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Port.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Provider_Port.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Requirer_Port.puml
+
+Software_Element <|-- Port
+
+Component_Type "1" o-right-> "1..*" Port : "        "
+
+Port -> "1\rContract_Ref" Interface : "                    "
+
+Port <|-- Provider_Port
+Port <|-- Requirer_Port
+
+@enduml

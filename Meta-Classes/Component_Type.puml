@@ -2,8 +2,10 @@
 
 class Component_Type
 {
-  Used to model a part of an embedded software
-  realizing one or several software functions.
+  Used to model a part of an
+  embedded software realizing
+  one or several software
+  functions.
 }
 
 @enduml
