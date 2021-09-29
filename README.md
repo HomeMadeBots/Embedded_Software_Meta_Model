@@ -215,21 +215,34 @@ instantiation) and cannot be modify later (at run time).
 
 #### PARAM_1 (Error)
 
-The **Data_Type** referenced by a **Configuration_Parameter** shall not be a
-**Record_Type**.  
-_Parameter shall be as simple as possible._
+A **Configuration_Parameter** shall reference one and only one **Data_Type**.
 
 #### PARAM_2 (Error)
 
-The **Data_Type** referenced by a **Configuration_Parameter** shall not be an
-**Array_Type** of **Record_Type**.  
+The **Data_Type** referenced by a **Configuration_Parameter** shall not be a
+**Record_Type**.  
 _Parameter shall be as simple as possible._
 
 #### PARAM_3 (Error)
 
 The **Data_Type** referenced by a **Configuration_Parameter** shall not be an
+**Array_Type** of **Record_Type**.  
+_Parameter shall be as simple as possible._
+
+#### PARAM_4 (Error)
+
+The **Data_Type** referenced by a **Configuration_Parameter** shall not be an
 **Array_Type** of **Array_Type**.  
 _Parameter shall be as simple as possible._
+
+#### PARAM_5 (Error)
+
+The _Default\_Value_ of a **Configuration_Parameter** shall not be empty.
+
+#### PARAM_6 (Error)
+
+The _Default\_Value_ of a **Configuration_Parameter** shall be consistent with
+its referenced Data_Type (through _Type\_Ref_).
 
 ### Remarks
 
