@@ -9,7 +9,7 @@
 !includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Configuration.puml
 
 
-Variable <|-- Configuration_Parameter
+Variable <|-- Configuration
 
 Component_Type *-right-> "*" Configuration : Configurations
 

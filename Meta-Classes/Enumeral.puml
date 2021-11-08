@@ -5,8 +5,8 @@ class Enumeral
   Used to model a value that an
   Enumerated_Type can take.
   --
-  Name:string
-  Description:string
+  + Name:string
+  + Description:string
 }
 
 @enduml

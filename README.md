@@ -12,17 +12,23 @@ The firsts elements defined on this page are abstract meta-classes. They allow
 to define basic concepts by grouping common properties of elements defined
 latter which are specializations from these abstract elements.
 
+Note that the rules are inherited. If an element specializes an other element,
+the rules defined for the based element aplly to the specialized element.
+
 ## Meta-classes list
 
 * [Software_Element](#software_element)
 * [Type](#type)
 * [Variable](#variable)
+* [Parameter](#parameter)
 * [Package](#package)
 * [Component_Type](#component_type)
 * [Interface](#interface)
+* [Client_Server_Interface](#client_server_interface)
+* [Event_Interface](#event_interface)
 * [Ports](#ports)
 * [OS_Operation](#os_operation)
-* [Configuration_Parameter](#configuration_parameter)
+* [Configuration](#configuration)
 * [Basic_Type](#basic_type)
 * [Enumerated_Type](#enumerated_type)
 * [Physical_Type](#physical_type)
@@ -216,6 +222,12 @@ used by each software component to ensure its role.
 A **Client_Server_Interface** shall provide at least one operation.
 _An empty communication patern in a non-sense._
 
+## Event_Interface
+
+### Definition
+
+![Event_Interface](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Event_Interface_Dgm.puml)
+
 ## Ports
 
 ### Description
@@ -294,7 +306,7 @@ _Configuration shall be as simple as possible._
 
 The _Default\_Value_ of a **Configuration** shall not be empty.
 
-#### CONF_6 (Error)
+#### CONF_5 (Error)
 
 The _Default\_Value_ of a **Configuration** shall be consistent with
 its referenced **Type**.

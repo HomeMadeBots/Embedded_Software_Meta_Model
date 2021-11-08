@@ -5,7 +5,7 @@ class Parameter
   Used to model a parameter of
   a subroutine.
   --
-  Stream:E_Parameter_Stream
+  + Stream:E_Parameter_Stream
 }
 
 @enduml

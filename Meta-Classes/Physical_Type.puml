@@ -11,9 +11,9 @@ class Physical_Type
   is as follow :
   phy = soft * Resolution + Offset
   --
-  Unit:string
-  Resolution:decimal
-  Offset:decimal
+  + Unit:string
+  + Resolution:decimal
+  + Offset:decimal
 }
 
 @enduml

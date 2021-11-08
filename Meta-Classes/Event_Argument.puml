@@ -1,0 +1,9 @@
+@startuml
+
+class Event_Argument
+{
+  Used to model an argument
+  carried by an **Event_Interface**.  
+}
+
+@enduml
