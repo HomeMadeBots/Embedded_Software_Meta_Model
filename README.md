@@ -8,16 +8,21 @@ embedded software.
 It covers the the physical software architecture and the software detailed
 design. Functionnal architecture is not covered.
 
+The firsts elements defined on this page are abstract meta-classes. They allow
+to define basic concepts by grouping common properties of elements defined
+latter which are specializations from these abstract elements.
+
 ## Meta-classes list
 
 * [Software_Element](#software_element)
+* [Type](#type)
+* [Variable](#variable)
 * [Package](#package)
 * [Component_Type](#component_type)
 * [Interface](#interface)
 * [Ports](#ports)
 * [OS_Operation](#os_operation)
 * [Configuration_Parameter](#configuration_parameter)
-* [Data_Type](#data_type)
 * [Basic_Type](#basic_type)
 * [Enumerated_Type](#enumerated_type)
 * [Physical_Type](#physical_type)
@@ -66,6 +71,42 @@ The aggregates of a given **Software_Element** shall have a different _Name_.
 _To ensure model transformation (including implementation).
 Some meta-models do not allow that two elements having the same parent have the
 same identifier (e.g. : AUTOSAR)._
+
+## Type
+
+### Definition
+
+![Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Type_Dgm.puml)
+
+The abstract meta-class **Type** is specialized into several sub meta-classes.
+
+![Type specializations](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Type_Specializations_Dgm.puml)
+
+See following chapters for details.
+
+## Variable
+
+![Variable](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Variable_Dgm.puml)
+
+### Rules
+
+#### VAR_1 (Error)
+A **Variable** shall reference one and only one **Type**.
+_By definition._
+
+## Parameter
+
+### Definition
+
+![Parameter](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Parameter_Dgm.puml)
+
+### Remarks
+
+* The stream of a parameter is either **INPUT** or **OUPUT**.
+It does mean that "IN/OUT" parameters can not be modeled. This is because from
+the (abtract) point of view of the physical software architecture, a data is
+either necessary to perform a subroutine, either a result of a subroutine.
+"IN/OUT" concept is programming language specific.
 
 ## Package
 
@@ -139,6 +180,11 @@ re-used on several projects, but each project has only one instance of them
 designed especially for a given project (cannot be reused) and it has only one
 instance of them (e.g. : system specific function manager).
 
+* The software functions implemented by a component type should be "high level"
+functions. It means domain or product specific functions, opposed to "basic"
+software functions which are implemented by generic classes or libraries
+(detailed design).
+
 ## Interface
 
 ### Description
@@ -151,11 +197,24 @@ An interface is a formal description of the communication pattern between
 software components types. An interface defines a contract.
 
 The software architect shall define which interface shall be realized and are
-needed by each software component to ensure its role.
+used by each software component to ensure its role.
 
 ### Definition
 
 ![Interface](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Interface_Dgm.puml)
+
+## Client_Server_Interface
+
+### Definition
+
+![Client_Server_Interface](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Client_Server_Interface_Dgm.puml)
+
+### Rules
+
+#### CSIF1_1 (Error)
+
+A **Client_Server_Interface** shall provide at least one operation.
+_An empty communication patern in a non-sense._
 
 ## Ports
 
@@ -163,9 +222,9 @@ needed by each software component to ensure its role.
 
 The software components hide the implementation of the functionality they provide
 and simply expose very well defined connection points, called ports.  
-Through a "provider" port, a software component can realized one interface.  
-Through a "requirer" port, a software component can access to the realized
-interface of an other software component.
+Through a "provider" port, a software component realizes one interface.  
+Through a "requirer" port, a software component uses one interface (realized by
+an other software component).
 
 ### Definition
 
@@ -174,14 +233,15 @@ interface of an other software component.
 ### Rules
 
 #### PORT_1 (Error)
-A **Port** shall have one and only one contract (through _Contract\_Ref_).
+A **Port** shall have one and only one contract.
+_By definition._
 
 ### Remarks
 
 * The port mechanism allows to finely managed dependencies between components :
 a component can only depend on a subset of operations provided by an other one
 and not on all the realized interfaces.
-* It also allows to realize, or depend on, the same interface several times.
+* It also allows to realize, or use, the same interface several times.
 
 ## OS_Operation
 
@@ -198,7 +258,7 @@ the operating system of the micro-controller.
 
 * An **OS_OPeration** does not have any argument.
 
-## Configuration_Parameter
+## Configuration
 
 ### Description
 
@@ -209,56 +269,40 @@ instantiation) and cannot be modify later (at run time).
 
 ### Definition
 
-![Configuration_Parameter](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Configuration_Parameter_Dgm.puml)
+![Configuration](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Configuration_Dgm.puml)
 
 ### Rules
 
-#### PARAM_1 (Error)
+#### CONF_1 (Warning)
 
-A **Configuration_Parameter** shall reference one and only one **Data_Type**.
+The **Type** referenced by a **Configuration** should not be a **Record_Type**.  
+_Configuration shall be as simple as possible._
 
-#### PARAM_2 (Error)
+#### CONF_2 (Warning)
 
-The **Data_Type** referenced by a **Configuration_Parameter** shall not be a
+The **Type** referenced by a **Configuration** shall not be an **Array_Type** of
 **Record_Type**.  
-_Parameter shall be as simple as possible._
+_Configuration shall be as simple as possible._
 
-#### PARAM_3 (Error)
+#### CONF_3 (Warning)
 
-The **Data_Type** referenced by a **Configuration_Parameter** shall not be an
-**Array_Type** of **Record_Type**.  
-_Parameter shall be as simple as possible._
+The **Type** referenced by a **Configurationr** shall not be an **Array_Type**
+of **Array_Type**.  
+_Configuration shall be as simple as possible._
 
-#### PARAM_4 (Error)
+#### CONF_4 (Error)
 
-The **Data_Type** referenced by a **Configuration_Parameter** shall not be an
-**Array_Type** of **Array_Type**.  
-_Parameter shall be as simple as possible._
+The _Default\_Value_ of a **Configuration** shall not be empty.
 
-#### PARAM_5 (Error)
+#### CONF_6 (Error)
 
-The _Default\_Value_ of a **Configuration_Parameter** shall not be empty.
-
-#### PARAM_6 (Error)
-
-The _Default\_Value_ of a **Configuration_Parameter** shall be consistent with
-its referenced Data_Type (through _Type\_Ref_).
+The _Default\_Value_ of a **Configuration** shall be consistent with
+its referenced **Type**.
 
 ### Remarks
 
-* **Configuration_Parameters** shall be use to create configurable (either
+* **Configuration** shall be use to create configurable (either
 mutli-instantiable, either singleton) **Component_Types**.
-
-## Data_Type
-
-### Definition
-
-![Data_Type](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Data_Type_Dgm.puml)
-
-The abstract meta-class **Data_Type** is specialized into several sub
-meta-classes.
-
-![Data_Type specializations](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Data_Type_Specializations_Dgm.puml)
 
 ## Basic_Type
 

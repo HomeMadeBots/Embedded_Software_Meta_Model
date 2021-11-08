@@ -1,0 +1,13 @@
+@startuml
+
+class Asynchronous_Operation
+{
+  Used to model an operation that
+  does not blocks the client until
+  the server answers.
+  The server can notify its client
+  that the operation is finished
+  through a callback.
+}
+
+@enduml

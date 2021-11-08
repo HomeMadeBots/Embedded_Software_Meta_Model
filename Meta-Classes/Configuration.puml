@@ -1,8 +1,8 @@
 @startuml
 
-class Configuration_Parameter
+class Configuration
 {
-  Used to model a parameter of
+  Used to model a attribute of
   a **Component_Type** that
   is set at its instantiation.
   --

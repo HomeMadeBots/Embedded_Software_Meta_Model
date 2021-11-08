@@ -1,0 +1,12 @@
+@startuml
+
+enum E_Parameter_Stream
+{
+  Allows to model the stream of
+  a parameter of a subroutine.
+  --
+  INPUT
+  OUTPUT
+}
+
+@enduml

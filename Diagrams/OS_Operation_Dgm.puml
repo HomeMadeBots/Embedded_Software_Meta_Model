@@ -11,6 +11,6 @@
 
 Software_Element <|-- OS_Operation
 
-Component_Type "1" o-right-> "*" OS_Operation : "    "
+Component_Type *-right-> "*" OS_Operation : Operations
 
 @enduml

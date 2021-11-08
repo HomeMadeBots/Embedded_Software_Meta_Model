@@ -1,0 +1,11 @@
+@startuml
+
+class Event_Interface
+{
+  Used to model a communication
+  pattern where a sender notifies
+  one or several receivers of the
+  occurrence of a phenomenon.  
+}
+
+@enduml

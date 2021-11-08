@@ -2,8 +2,8 @@
 
 class Component_Type
 {
-  Used to model a part of an
-  embedded software realizing
+  Used to model a piece of an
+  embedded software implementing
   one or several software
   functions.
 }

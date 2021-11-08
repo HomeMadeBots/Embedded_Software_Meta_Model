@@ -14,9 +14,9 @@
 
 Software_Element <|-- Port
 
-Component_Type "1" o-right-> "1..*" Port : "        "
+Component_Type *-right-> "1..*" Port : Ports
 
-Port -> "1\rContract_Ref" Interface : "                    "
+Port -> "1" Interface : Contract_Ref
 
 Port <|-- Provider_Port
 Port <|-- Requirer_Port

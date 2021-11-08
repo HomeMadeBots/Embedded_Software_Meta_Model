@@ -1,0 +1,10 @@
+@startuml
+
+class Synchronous_Operation
+{
+  Used to model an operation that
+  blocks the client while the server
+  has not answered.
+}
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+
+abstract class Type
+{
+  A **Type** allows to classify a data in
+  order to specify what kind of value
+  it has and what kind of mathematical,
+  relational or logical operations can
+  be applied to it.
+}
+
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+
+abstract class Variable
+{
+  A **Variable** is a container for a
+  particular type of data.
+}
+
+@enduml

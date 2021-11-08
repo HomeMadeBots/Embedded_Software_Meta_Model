@@ -8,7 +8,7 @@
 
 !includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Interface.puml
 
-Package "1" o--> "*" Interface
+Package *--> "*" Interface
 
 Software_Element <|-right- Interface
 

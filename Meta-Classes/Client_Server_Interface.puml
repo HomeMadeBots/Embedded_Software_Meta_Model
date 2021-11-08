@@ -1,0 +1,11 @@
+@startuml
+
+class Client_Server_Interface
+{
+  Used to model a communication
+  pattern where a server provides
+  operations that are used by one
+  or more clients.
+}
+
+@enduml

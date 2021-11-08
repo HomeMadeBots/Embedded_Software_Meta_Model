@@ -1,0 +1,5 @@
+@startuml
+
+abstract class Client_Server_Operation
+
+@enduml

@@ -4,7 +4,7 @@ skinparam groupInheritance 3
 
 !includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
 
-!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Data_Type.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Type.puml
 
 !includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Basic_Type.puml
 !includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Enumerated_Type.puml
@@ -14,10 +14,10 @@ skinparam groupInheritance 3
 
 hide fields
 
-Data_Type <|-- Basic_Type
-Data_Type <|-- Enumerated_Type
-Data_Type <|-- Physical_Type
-Data_Type <|-- Record_Type
-Data_Type <|-- Array_Type
+Type <|-- Basic_Type
+Type <|-- Enumerated_Type
+Type <|-- Physical_Type
+Type <|-- Record_Type
+Type <|-- Array_Type
 
 @enduml

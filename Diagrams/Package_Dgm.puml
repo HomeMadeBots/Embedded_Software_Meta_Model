@@ -10,7 +10,7 @@ class project as "software project"
 
 Software_Element <|-down- Package
 
-project "1..*" o-down-> "1..*" Package
+project *-down-> "1..*" Package
 
 Package "1" o-> "*" Package : Nested_Packages
 

@@ -1,0 +1,31 @@
+@startuml
+
+!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Interface.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Client_Server_Interface.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Software_Element.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Client_Server_Operation.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Parameter.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Synchronous_Operation.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Asynchronous_Operation.puml
+
+Interface <|-- Client_Server_Interface
+
+Client_Server_Interface *--> "1..*" Client_Server_Operation : Operations
+
+Software_Element <|- Client_Server_Operation
+
+Client_Server_Operation *-> "*" Parameter : Parameters
+
+Client_Server_Operation <|-- Synchronous_Operation
+
+Client_Server_Operation <|-- Asynchronous_Operation
+
+@enduml
