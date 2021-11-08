@@ -10,8 +10,8 @@
 
 Type <|-- Record_Type
 
-Record_Type "1" *--- "2..*" Field : Fields
+Record_Type *-- "2..*" Field : Fields
 
-Field --> "1\rType_Ref" Data_Type
+Field --> "1" Type : Type_Ref
 
 @enduml
