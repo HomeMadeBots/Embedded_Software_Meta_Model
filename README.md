@@ -5,8 +5,8 @@ The meta-model is framework and language independent.
 It is a set of meta-classes, relations and rules dedicated to the modeling of an
 embedded software.
 
-It covers the the physical software architecture and the software detailed
-design. Functionnal architecture is not covered.
+It covers the physical software architecture and the software detailed design.
+Functionnal architecture is not covered.
 
 The firsts elements defined on this page are abstract meta-classes. They allow
 to define basic concepts by grouping common properties of elements defined
@@ -105,6 +105,12 @@ _By definition._
 ### Definition
 
 ![Parameter](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Parameter_Dgm.puml)
+
+### Attributes
+
+| Attributes | Type | Description |
+| :-- | :-- | :-- |
+| _Stream_ | {INPUT, OUTPUT} | Stream of a parameter, either provided to, either result of a subroutine. |
 
 ### Remarks
 
@@ -219,7 +225,7 @@ used by each software component to ensure its role.
 
 #### CSIF1_1 (Error)
 
-A **Client_Server_Interface** shall provide at least one operation.
+A **Client_Server_Interface** shall provide at least one operation.  
 _An empty communication patern in a non-sense._
 
 ## Event_Interface
@@ -268,7 +274,7 @@ the operating system of the micro-controller.
 
 ### Remarks
 
-* An **OS_OPeration** does not have any argument.
+* An **OS_Operation** does not have any argument.
 
 ## Configuration
 
