@@ -1,6 +1,7 @@
 # Embedded_Software_Meta_Model
 
-This repo defines a meta-model allowing to model an embedded software.  
+This repo defines a meta-model allowing to model an embedded software loaded on
+a single core microcontroller.  
 The meta-model is framework and language independent.  
 It is a set of meta-classes, relations and rules dedicated to the modeling of an
 embedded software.
@@ -39,7 +40,7 @@ the rules defined for the based element aplly to the specialized element.
 
 ### Description
 
-Many meta-classes of this meta-model derive from Software_Element.  
+Many meta-classes of this meta-model derive from **Software_Element**.  
 It is an abstract meta-class that defines the common attributes shared by all
 the meta-classes that inherit from it.
 
@@ -74,7 +75,7 @@ elements._
 
 #### ELMT_4 (Error)
 The aggregates of a given **Software_Element** shall have a different _Name_.  
-_To ensure model transformation (including implementation).
+_To ensure model transformation (including implementation).  
 Some meta-models do not allow that two elements having the same parent have the
 same identifier (e.g. : AUTOSAR)._
 
@@ -97,7 +98,7 @@ See following chapters for details.
 ### Rules
 
 #### VAR_1 (Error)
-A **Variable** shall reference one and only one **Type**.
+A **Variable** shall reference one and only one **Type**.  
 _By definition._
 
 ## Parameter
@@ -134,8 +135,8 @@ A package allows to group software elements.
 
 ![Package](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/Embedded_Software_Meta_Model/master/Diagrams/Package_Dgm.puml)
 
-All the element kind which can be aggregated by a **Package** are not modeled on
-this diagram.
+All the kinds of elements which can be aggregated by a **Package** are not
+modeled on this diagram.
 
 ### Rules
 
@@ -165,9 +166,9 @@ The software architect shall decompose the embedded software in several software
 components and allocate each software function to one and only one software
 component.
 
-To fit object oriented design concept, a software component shall be seen as the
-abstraction of two linked element : the software component prototype
-(the object) and the software component type (the class).  
+To fit object oriented design concept, a software component shall be seen as two
+linked elements : the software component prototype (the object) and the software
+component type (the class).  
 Thereby, if the same software functions are needed several times within the same
 software project, it is possible to instantiate the same component type several
 times.
@@ -204,9 +205,9 @@ software functions which are implemented by generic classes or libraries
 To realize its role (its software functions) a software component may need to
 use functions from the other software components of the embedded software.  
 The communication between the software components shall be done following
-pre-define pattern. These pattern are the software interfaces.  
+predefined patterns. These patterns are the software interfaces.  
 An interface is a formal description of the communication pattern between
-software components types. An interface defines a contract.
+software component types. An interface defines a contract.
 
 The software architect shall define which interface shall be realized and are
 used by each software component to ensure its role.
@@ -226,7 +227,7 @@ used by each software component to ensure its role.
 #### CSIF1_1 (Error)
 
 A **Client_Server_Interface** shall provide at least one operation.  
-_An empty communication patern in a non-sense._
+_An empty communication patern in a nonsense._
 
 ## Event_Interface
 
@@ -238,8 +239,8 @@ _An empty communication patern in a non-sense._
 
 ### Description
 
-The software components hide the implementation of the functionality they provide
-and simply expose very well defined connection points, called ports.  
+The software components hide the implementation of the functionality they
+provide and simply expose very well defined connection points, called ports.  
 Through a "provider" port, a software component realizes one interface.  
 Through a "requirer" port, a software component uses one interface (realized by
 an other software component).
@@ -251,7 +252,7 @@ an other software component).
 ### Rules
 
 #### PORT_1 (Error)
-A **Port** shall have one and only one contract.
+A **Port** shall have one and only one contract.  
 _By definition._
 
 ### Remarks
@@ -265,8 +266,8 @@ and not on all the realized interfaces.
 
 ### Description
 
-The software component types can provide public operations that can be called by
-the operating system of the micro-controller.
+The software component types can provide public operations that shall be called
+by the operating system of the microcontroller.
 
 ### Definition
 
@@ -326,8 +327,8 @@ mutli-instantiable, either singleton) **Component_Types**.
 
 ### Description
 
-An embedded software is by definition implemented on a micro-controller.  
-A basic type is a type that can be natively handled by a micro-controller.
+An embedded software is implemented on a microcontroller.  
+A basic type is a type that can be natively handled by a microcontroller.
 
 ### Definition
 
@@ -406,7 +407,7 @@ type._
 #### PHY_3 (Error)
 The _Base_Type_Ref_ of a **Physical_Type** shall be a **Basic_Integer_Type**.  
 _A physical data type shall rely on a native integer data type from the
-micro-contoller to be able to apply the conversion rule._
+microcontroller to be able to apply the conversion rule._
 
 #### PHY_4 (Error)
 The _Offset_ of a **Physical_Type** shall be set to a decimal value.  
