@@ -1,0 +1,27 @@
+@startuml
+
+!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Software_Element.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Software_Composition.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Component_Prototype.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Connector.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Task.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Package.puml
+
+Software_Element <|-- Software_Composition
+
+Package *--> "Compositions\r*" Software_Composition
+
+Software_Composition *-> "Tasks\r1..*" Task : "        "
+
+Component_Prototype "Components\l2..*" <-* Software_Composition : "                  "
+
+Software_Composition *--> "Connectors\r1..*" Connector
+
+@enduml

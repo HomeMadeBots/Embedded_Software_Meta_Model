@@ -1,0 +1,26 @@
+@startuml
+
+!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Software_Element.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Software_Composition.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Task.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/OS_Operation_Call.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/Component_Prototype.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/Embedded_Software_Meta_Model/main/Meta-Classes/OS_Operation.puml
+
+Software_Composition *-> "Tasks\r1..*" Task : "        "
+
+Software_Element <|-- Task
+
+Task *-> "Operations\r1..*" OS_Operation_Call : "                 "
+
+OS_Operation_Call --> "Component_Ref\r1" Component_Prototype 
+OS_Operation_Call --> "Operation_Ref\r1" OS_Operation
+
+@enduml
