@@ -1,0 +1,9 @@
+@startuml
+
+class Component_Prototype {
+  Allows to model an instance of a
+  Component_Type within a
+  Software_Composition.
+}
+
+@enduml

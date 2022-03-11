@@ -1,0 +1,11 @@
+@startuml
+
+class OS_Operation_Call {
+  Allows to model the call of an
+  **OS_Operation** from a
+  **Component_Prototype**.
+  --
+  +Priority:unsigned integer
+}
+
+@enduml

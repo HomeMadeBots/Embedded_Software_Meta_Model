@@ -1,0 +1,9 @@
+@startuml
+
+class Software_Composition {
+  Allows to model the actual software
+  application loaded on the
+  microcontroller.
+}
+
+@enduml

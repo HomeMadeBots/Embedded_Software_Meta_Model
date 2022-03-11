@@ -1,0 +1,8 @@
+@startuml
+
+class Task {
+  Allows to model a task of
+  the operating system.
+}
+
+@enduml

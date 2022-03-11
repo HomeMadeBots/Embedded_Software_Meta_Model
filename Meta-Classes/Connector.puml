@@ -1,0 +1,10 @@
+@startuml
+
+class Connector {
+  Allows to model the message flow
+  between two instances of
+  Component_Types through their
+  ports.
+}
+
+@enduml
